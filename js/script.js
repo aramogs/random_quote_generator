@@ -27,8 +27,7 @@ var quotes = [
     source:'Gabriel Garcia Marquez',
     citation: 'Living to tell the tale',
     year:'2002'
-  }
-  
+  } 
 ];
 // Array of objects{} Colors to be picked randomly for the background
 var colors = [
