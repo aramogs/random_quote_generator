@@ -38,8 +38,14 @@ var colors = [
   '#eccc68',
   '#ff6348' 
 ];
+
+var timer;
+timerID();
 // Variable that triggers the printQuote function every 30s
-var intervalID = window.setInterval(printQuote, 30000);
+//var intervalID = window.setInterval(printQuote, 30000);
+function timerID(){
+timer = setInterval(function(){ printQuote(); }, 5000);
+}
 /*Function to get random number depending on the length of 'quotes' or 'colors' arrays
   sending the desire information to the funciton using req example getRandomQuote(colors)  */
 function getRandomQuote(req) {
@@ -78,6 +84,9 @@ function printQuote() {
   }
   //Calling the function randColor to change the color every time the EventListener is clicked
   randColor();
+
+  clearInterval(timer);
+  timerID();
 }
 //Eventlistener for clicks of the button loadQuote
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
